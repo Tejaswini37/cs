@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Angular js</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h2>Angular js</h2>
+    <div ng-controller="MainController">
+        {{message}}
+        <input type="text" ng-model="name">
+    <p>Hello, {{name}}!</p>
+    <ul>
+        <li ng-repeat="student in students">
+            {{student.name}} - {{student.age}}
+        </li>
+    </ul>
+    <input type="number" ng-model="num1">
+<input type="number" ng-model="num2">
+
+<p>Sum = {{num1 + num2}}</p>
+    </div>
+    
+    
+</body>
+</html>

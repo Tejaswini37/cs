@@ -1,0 +1,21 @@
+
+.search-wrapper {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* ✅ LG: fixed 400px */
+@media (min-width: 992px) {
+  .search-wrapper {
+    width: 400px;
+  }
+}
+
+/* Suggestions styling */
+#suggestionsBox {
+  background: white;
+  border-radius: 10px;
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}

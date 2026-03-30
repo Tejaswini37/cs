@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="productApp">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shop Manager</title>
+
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+<!-- AngularJS Routing -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+<!-- App Core -->
+<script src="app/app.module.js"></script>
+<script src="app/app.config.js"></script>
+
+<!-- Services -->
+<script src="services/api.service.js"></script>
+<script src="services/auth.service.js"></script>
+<script src="services/product.service.js"></script>
+<script src="services/cart.service.js"></script>
+<script src="services/order.service.js"></script>
+<script src="services/admin.service.js"></script>
+
+<!-- Controllers -->
+<script src="controllers/auth.controller.js"></script>
+<script src="controllers/product.controller.js"></script>
+<script src="controllers/cart.controller.js"></script>
+<script src="controllers/order.controller.js"></script>
+<script src="controllers/admin.controller.js"></script>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f5f6fa;
+}
+
+.main-layout{
+display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:220px;
+background:#2c3e50;
+color:white;
+min-height:100vh;
+padding:20px;
+}
+
+.sidebar a{
+color:white;
+text-decoration:none;
+display:block;
+padding:10px;
+margin:5px 0;
+border-radius:4px;
+}
+
+.sidebar a:hover{
+background:#34495e;
+}
+
+/* Content */
+
+.content{
+flex:1;
+padding:20px;
+}
+
+/* Navbar */
+
+.navbar{
+background:#34495e;
+color:white;
+padding:10px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-right:15px;
+}
+
+button{
+padding:6px 12px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div ng-include="'navbar.html'"></div>
+
+<div class="main-layout">
+
+<!-- Sidebar -->
+<div ng-include="'sidebar.html'"></div>
+
+<!-- Page Content -->
+<div class="content" ng-view></div>
+
+</div>
+
+</body>
+
+</html>

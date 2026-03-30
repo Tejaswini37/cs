@@ -1,0 +1,13 @@
+<nav>
+
+<a href="#!/home">Home</a>
+
+<a href="#!/cart">Cart</a>
+
+<a href="#!/orders">Orders</a>
+
+<a href="#!/login" ng-if="!isLoggedIn()">Login</a>
+
+<button ng-click="logout()" ng-if="isLoggedIn()">Logout</button>
+
+</nav>

@@ -1,0 +1,1 @@
+<h1 style="background:blue; text-align:center; color:white">this is about page</h1>

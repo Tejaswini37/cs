@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        min-height: 100vh;
+        background:
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25)),
+          url("img1.jpg") center/cover no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="conatainer mt-4 mx-4">
+      <h3 class="text-light">My cart</h3>
+      <div id="cartItems" class="row mt-3"></div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/utils.js"></script>
+
+    <script>
+      protectDashboard();
+      loadNavbar();
+      async function loadCart() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const conatainer = document.getElementById("cartItems");
+        if (cart.length == 0) {
+          container.innerHtml = "<h5> your cart is empty</h5>";
+          return;
+        }
+        let html = "";
+        for (let id of cart) {
+          const res = await fetch(`https://dummyjson.com/recipes/${id}`);
+          const r = await res.json();
+
+          html += `
+        <div class="col-12 col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm rounded-4" onclick=gotoRecipe(${r.id}) style="cursor:pointer">
+          <img src="${r.image}" class="card-img-top rounded-top-4" style="height:180px; object-fit:cover;"/>
+          <div class="card-body rounded-bottom-4 d-flex flex-column" style="background-color:rgb(206, 196, 181,0.25)">
+        
+            <h5 class="card-title fw-bold mb-1">${r.name}</h5>
+            <p class="fw-semibold mb-1">${r.cuisine}</p>
+            <p class="fw-semibold mb-1">⭐ ${r.rating}</p>
+            <button class="btn btn-danger w-100" onclick="removeFromCart(${id})">
+                        Remove
+                    </button>
+          </div>
+        </div>
+      </div>
+        `;
+        }
+        conatainer.innerHTML = html;
+      }
+      function removeFromCart(id) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart = cart.filter((i) => i != id);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart();
+      }
+      loadCart();
+    </script>
+  </body>
+</html>

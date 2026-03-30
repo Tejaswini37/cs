@@ -1,0 +1,68 @@
+<div>
+
+<h2>Admin Products</h2>
+
+<h3>Create Product</h3>
+
+<input type="text"
+       placeholder="Name"
+       ng-model="newProduct.name">
+
+<input type="text"
+       placeholder="Description"
+       ng-model="newProduct.description">
+
+<input type="number"
+       placeholder="Price"
+       ng-model="newProduct.price">
+
+<input type="number"
+       placeholder="Stock"
+       ng-model="newProduct.stock">
+
+<input type="text"
+       placeholder="Image URL"
+       ng-model="newProduct.image_url">
+
+<input type="number"
+       placeholder="Category ID"
+       ng-model="newProduct.category_id">
+
+<button ng-click="createProduct()">
+Add Product
+</button>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Price</th>
+<th>Stock</th>
+<th>Action</th>
+</tr>
+
+<tr ng-repeat="p in products">
+
+<td>{{p.id}}</td>
+
+<td>{{p.name}}</td>
+
+<td>{{p.price}}</td>
+
+<td>{{p.stock}}</td>
+
+<td>
+
+<button ng-click="deleteProduct(p.id)">
+Delete</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>

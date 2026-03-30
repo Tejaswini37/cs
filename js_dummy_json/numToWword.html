@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="toWord(); return false;">
+    <input type="number" id="number" placeholder="enter number" />
+    <button type="submit">Convert</button>
+    </form>
+    <h2 id="output"></h2>
+    <script>
+      const ones = [
+        "",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+      ];
+      const tens = [
+        "",
+        "",
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "sixty",
+        "seventy",
+        "eighty",
+        "ninety",
+      ];
+      const teens = [
+        "ten",
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen",
+      ];
+      function helper(n) {
+        let ans = "";
+        if (n >= 100) {
+          // 785, 713, 703, 85, 23, 13, 7
+          ans += ones[Math.floor(n / 100)] + " hundred ";
+          n %= 100;
+        }
+        if (n >= 10 && n < 20) {
+          // 713
+          ans += teens[n - 10] + " ";
+        } else {
+          if (n >= 20) {
+            // 785
+            ans += tens[Math.floor(n / 10)] + " ";
+            n %= 10;
+          }
+          if (n > 0) {
+            // 785, 705
+            ans += ones[n] + " ";
+          }
+        }
+        return ans.trim();
+      }
+      function solve(n) {
+        if (n === 0) return "zero";
+
+        let ans = "";
+        if (n >= 10000000) {
+          let noOfCrores = helper(Math.floor(n / 10000000));
+          ans += noOfCrores + " crore ";
+          n %= 10000000;
+        }
+        if (n >= 100000) {
+          let noOfLakhs = helper(Math.floor(n / 100000));
+          ans += noOfLakhs + " lakh ";
+          n %= 100000;
+        }
+        if (n >= 1000) {
+          let noOfThousands = helper(Math.floor(n / 1000));
+          ans += noOfThousands + " thousand ";
+          n %= 1000;
+        }
+        if (n != 0) ans += helper(n);
+        
+        return ans.trim();
+      }
+      function toWord() {
+        let n = parseInt(document.getElementById("number").value);
+        if (isNaN(n)) {
+          document.getElementById("output").innerHTML = "enter valid number";
+          return;
+        }
+        document.getElementById("output").innerHTML = solve(n);
+      }
+    </script>
+  </body>
+</html>

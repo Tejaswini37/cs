@@ -1,0 +1,45 @@
+<div class="sidebar">
+
+<h3 class="logo">Shop Manager</h3>
+
+<ul class="menu">
+
+<li>
+<a href="#!/home">
+🏠 Home
+</a>
+</li>
+
+<li ng-if="isLoggedIn()">
+<a href="#!/cart">
+🛒 Cart
+</a>
+</li>
+
+<li ng-if="isLoggedIn()">
+<a href="#!/orders">
+📦 Orders
+</a>
+</li>
+
+<hr>
+
+<li>
+<strong>Admin Panel</strong>
+</li>
+
+<li ng-if="isLoggedIn()">
+<a href="#!/admin/products">
+📋 Manage Products
+</a>
+</li>
+
+<li ng-if="isLoggedIn()">
+<a href="#!/admin/categories">
+📂 Manage Categories
+</a>
+</li>
+
+</ul>
+
+</div>

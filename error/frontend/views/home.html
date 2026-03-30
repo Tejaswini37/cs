@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Products</h2>
+
+  <!-- Search Box -->
+  <input type="text" placeholder="Search products" ng-model="searchText" />
+
+  <button ng-click="searchProducts()">Search</button>
+
+  <br /><br />
+
+  <div class="product-grid">
+    <div class="product-card" ng-repeat="p in products">
+      <img ng-src="{{p.image_url}}" width="150" />
+
+      <h3>{{p.name}}</h3>
+
+      <p>{{p.description}}</p>
+
+      <h4>₹ {{p.price}}</h4>
+      <h1>{{1+1}}</h1>
+
+      <a href="#!/product/{{p.id}}"> View Details </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="cart-container">
+  <h2>My Cart</h2>
+
+  <table border="1">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+
+    <tr ng-repeat="item in cartItems">
+      <td>{{item.product.name}}</td>
+
+      <td>{{item.product.price}}</td>
+
+      <td>
+        <input type="number" ng-model="item.quantity" min="1" />
+
+        <button ng-click="updateQuantity(item)">Update</button>
+      </td>
+
+      <td>{{item.product.price * item.quantity}}</td>
+
+      <td>
+        <button ng-click="removeItem(item.id)">Remove</button>
+      </td>
+    </tr>
+  </table>
+
+  <br />
+
+  <button ng-click="placeOrder()">Place Order</button>
+</div>

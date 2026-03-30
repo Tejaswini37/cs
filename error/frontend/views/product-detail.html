@@ -1,0 +1,17 @@
+<div class="product-detail">
+
+<h2>{{product.name}}</h2>
+
+<img ng-src="{{product.image_url}}" width="250">
+
+<p>{{product.description}}</p>
+
+<h3>Price: ₹ {{product.price}}</h3>
+
+<p>Stock: {{product.stock}}</p>
+
+<button ng-click="addToCart(product.id)">
+Add To Cart
+</button>
+
+</div>

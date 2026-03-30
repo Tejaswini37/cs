@@ -1,0 +1,20 @@
+<div class="login-container">
+  <h2>Login</h2>
+
+  <form ng-submit="login()">
+    <label>Username</label>
+    <input type="text" ng-model="user.username" required />
+
+    <label>Password</label>
+    <input type="password" ng-model="user.password" required />
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p style="color: red">{{error}}</p>
+
+  <p>
+    Don't have an account?
+    <a href="#!/register">Register</a>
+  </p>
+</div>

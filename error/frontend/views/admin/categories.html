@@ -1,0 +1,43 @@
+<div>
+
+<h2>Categories</h2>
+
+<h3>Create Category</h3>
+
+<input type="text"
+       placeholder="Category name"
+       ng-model="newCategory.name">
+
+<button ng-click="createCategory()">
+Add Category
+</button>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Action</th>
+</tr>
+
+<tr ng-repeat="c in categories">
+
+<td>{{c.id}}</td>
+
+<td>{{c.name}}</td>
+
+<td>
+
+<button ng-click="deleteCategory(c.id)">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>

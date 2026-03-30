@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-3 mt-3 ms-4" ;>
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold fs-4" href="#">Cook Book</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto align-items-lg-center">
+        <li class="nav-item">
+          <button
+            class="btn btn-outline-light rounded-pill px-3 mt-2 mt-lg-0"
+            onclick="goDashboard()"
+          >
+            Home
+          </button>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav align-items-center gap-2 mt-3 mt-lg-0 ms-auto">
+
+  <!-- Search group -->
+  <li class="nav-item">
+    <div class="d-flex align-items-center position-relative">
+
+      <input
+        type="text"
+        id="searchInput"
+        class="form-control rounded-pill me-2"
+        placeholder="Search recipes..."
+        style="max-width: 320px;"
+      />
+
+      <button
+        class="btn btn-outline-primary text-white rounded-pill px-3"
+        onclick="searchRecipes()"
+      >
+        Search
+      </button>
+
+      <div 
+        id="suggestionsBox" 
+        class="list-group position-absolute w-100"
+        style="z-index: 1000; top: 100%;"
+      ></div>
+
+    </div>
+  </li>
+
+  <!-- Other buttons -->
+  <li class="nav-item">
+    <button class="btn btn-outline-warning px-3" onclick="goToCart()">
+      Cart
+    </button>
+  </li>
+
+  <li class="nav-item">
+    <button class="btn btn-outline-danger rounded-pill px-3" onclick="logout()">
+      Logout
+    </button>
+  </li>
+
+</ul>
+    </div>
+  </div>
+</nav>
+

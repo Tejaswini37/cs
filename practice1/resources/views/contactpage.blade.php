@@ -1,0 +1,1 @@
+<h1 style="background:blue; text-align:center; color:white">this is contact page</h1>
