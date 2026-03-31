@@ -46,7 +46,7 @@ function getSearchQuery() {
 
 //   container.innerHTML = displayRecipes(data.recipes);
 // }
-loadNavbar();
+// loadNavbar();
 loadInitialData(1);
 
 function gotoRecipe(id) {

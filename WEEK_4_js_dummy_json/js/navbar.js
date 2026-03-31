@@ -1,8 +1,11 @@
 async function loadNavbar() {
-  const res = await fetch("navbar.html");
-  const data = await res.text();
-
-  document.getElementById("navbar").innerHTML = data;
+  try {
+    const res = await fetch("navbar.html");
+    const data = await res.text();
+    document.getElementById("navbar").innerHTML = data;
+  } catch (err) {
+    console.error("navbar load failed", err);
+  }
 }
 
 function isLoggedIn() {
@@ -73,9 +76,21 @@ function goToRecipe(id) {
   window.location.href = `recipe.html?id=${id}`;
 }
 // outside click
+// document.addEventListener("click", function (e) {
+//   if (!e.target.closest("#searchInput")) {
+//     document.getElementById("suggestionsBox").innerHTML = "";
+//   }
+// });
+
+// ✅ AFTER — ignore clicks on the toggler and navbar
 document.addEventListener("click", function (e) {
-  if (!e.target.closest("#searchInput")) {
-    document.getElementById("suggestionsBox").innerHTML = "";
+  const box = document.getElementById("suggestionsBox");
+  if (
+    box &&
+    !e.target.closest("#searchInput") &&
+    !e.target.closest(".navbar-toggler")  
+  ) {
+    box.innerHTML = "";
   }
 });
 document.addEventListener("keypress", function (e) {
@@ -135,3 +150,4 @@ function logout() {
 function goToCart() {
   location.href = "cart.html";
 }
+

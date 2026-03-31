@@ -48,6 +48,7 @@
         "eighteen",
         "nineteen",
       ];
+      
       function helper(n) {
         let ans = "";
         if (n >= 100) {
@@ -70,7 +71,8 @@
           }
         }
         return ans.trim();
-      }
+      } 
+      
       function solve(n) {
         if (n === 0) return "zero";
 
@@ -94,6 +96,7 @@
         
         return ans.trim();
       }
+      
       function toWord() {
         let n = parseInt(document.getElementById("number").value);
         if (isNaN(n)) {

@@ -1,0 +1,83 @@
+<
+<nav class="navbar navbar-expand-lg navbar-dark px-3 mt-3 ms-4">
+  <div class="container-fluid">
+    <a
+      class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2"
+      href="#"
+      >Cook Book</a
+    >
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- content-->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto align-items-lg-center gap-1 mt-2 mt-lg-0">
+        <li class="nav-item">
+          <button
+            class="btn btn-outline-light rounded-pill px-3 mt-2 mt-lg-0"
+            onclick="goDashboard()"
+          >
+            Home
+          </button>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav align-items-center gap-2 mt-3 mt-lg-0">
+        <!-- Search group -->
+        <li class="nav-item w-100 w-lg-auto">
+          <div
+            class="d-flex flex-column flex-lg-row align-items-stretch position-relative"
+          >
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control rounded-pill mb-2 mb-lg-0 me-lg-2"
+              placeholder="Search recipes..."
+            />
+
+            <button
+              class="btn btn-outline-primary text-white rounded-pill px-3"
+              onclick="searchRecipes()"
+            >
+              Search
+            </button>
+
+            <div
+              id="suggestionsBox"
+              class="list-group position-absolute w-100"
+              style="z-index: 1000; top: 100%"
+            ></div>
+          </div>
+        </li>
+
+        <!-- buttons -->
+        <li class="nav-item">
+          <button
+            class="btn btn-outline-warning px-3 rounded-pill"
+            onclick="goToCart()"
+          >
+            Cart
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button
+            class="btn btn-outline-danger rounded-pill px-3 rounded-pill"
+            onclick="logout()"
+          >
+            Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <form id="form">
+      <input type="number" id="number" placeholder="enter number" />
+      <button type="submit">Convert</button>
+    </form>
+    <h2 id="input"></h2>
+    <h2 id="output"></h2>
+
+    <script>
+      const ones = {
+        0: "",
+        1: "one",
+        2: "two",
+        3: "three",
+        4: "four",
+        5: "five",
+        6: "six",
+        7: "seven",
+        8: "eight",
+        9: "nine",
+      };
+      const tens = {
+        2: "twenty",
+        3: "thirty",
+        4: "forty",
+        5: "fifty",
+        6: "sixty",
+        7: "seventy",
+        8: "eighty",
+        9: "ninety",
+      };
+      const teens = {
+        10: "ten",
+        11: "eleven",
+        12: "twelve",
+        13: "thirteen",
+        14: "fourteen",
+        15: "fifteen",
+        16: "sixteen",
+        17: "seventeen",
+        18: "eighteen",
+        19: "nineteen",
+      };
+      const unit = [
+        [10000000, "crore"],
+        [100000, "lakh"],
+        [1000, "thousand"],
+      ];
+      function helper(n){ 
+        // 1-999 if 9999 ones[99]-> undefined
+        if(n>999) return solve(n);
+        let ans="";
+        if(n>=100){
+            ans+=ones[Math.floor(n/100)]+" hundred ";
+            n%=100;
+        }
+        if(n>=10 && n<=19){
+            ans+=teens[n]+" ";
+            return ans;
+        }
+        if(n>=20){
+            ans+=tens[Math.floor(n/10)]+ " ";
+            n%=10;
+        }
+        if(n>0){
+            ans+=ones[n]+" ";
+        }
+        return ans.trim();
+      }
+      function solve(n){  345678
+        if(n==0) return "zero";
+        let ans="";
+        for( let [key,value] of unit){
+            if(n>=key){
+                let count=Math.floor(n/key);
+                
+                ans+=helper(count)+" "+value+" ";
+                n%=key;
+            }
+        }
+        if(n>0) ans+=helper(n);
+        return ans.trim();
+      }
+      $("#form").submit(function (e) {
+        e.preventDefault();
+        let n = parseInt($("#number").val());
+        if (isNaN(n)) {
+          $("#output").text("enter valid number");
+          return;
+        }
+        $("#input").text(n);
+        $("#output").text(solve(n));
+      });
+    </script>
+  </body>
+</html>
