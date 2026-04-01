@@ -54,44 +54,64 @@
         [100000, "lakh"],
         [1000, "thousand"],
       ];
-      function helper(n){ 
+      function helper(n) {
         // 1-999 if 9999 ones[99]-> undefined
-        if(n>999) return solve(n);
-        let ans="";
-        if(n>=100){
-            ans+=ones[Math.floor(n/100)]+" hundred ";
-            n%=100;
+        if (n > 999) return solve(n);
+        let ans = "";
+        if (n >= 100) {
+          ans += ones[Math.floor(n / 100)] + " hundred ";
+          n %= 100;
         }
-        if(n>=10 && n<=19){
-            ans+=teens[n]+" ";
-            return ans;
+        if (n >= 10 && n <= 19) {
+          ans += teens[n] + " ";
+          return ans;
         }
-        if(n>=20){
-            ans+=tens[Math.floor(n/10)]+ " ";
-            n%=10;
+        if (n >= 20) {
+          ans += tens[Math.floor(n / 10)] + " ";
+          n %= 10;
         }
-        if(n>0){
-            ans+=ones[n]+" ";
+        if (n > 0) {
+          ans += ones[n] + " ";
         }
         return ans.trim();
       }
-      function solve(n){  345678
-        if(n==0) return "zero";
-        let ans="";
-        for( let [key,value] of unit){
-            if(n>=key){
-                let count=Math.floor(n/key);
-                
-                ans+=helper(count)+" "+value+" ";
-                n%=key;
-            }
+      function solve(n) {
+        345678;
+        if (n == 0) return "zero";
+        let ans = "";
+        for (let [key, value] of unit) {
+          if (n >= key) {
+            let count = Math.floor(n / key);
+
+            ans += helper(count) + " " + value + " ";
+            n %= key;
+          }
         }
-        if(n>0) ans+=helper(n);
+        if (n > 0) ans += helper(n);
         return ans.trim();
       }
-      $("#form").submit(function (e) {
+      /*$("#form").submit(function (e) {
         e.preventDefault();
         let n = parseInt($("#number").val());
+        if (isNaN(n)) {
+          $("#output").text("enter valid number");
+          return;
+        }
+        $("#input").text(n);
+        $("#output").text(solve(n));
+      });*/
+      /*$("#number").on("input", function () {
+        let val = $(this).val();
+        let n = parseInt(val);
+        if (isNaN(n)) {
+          $("#output").text("enter valid number");
+          return;
+        }
+        $("#input").text(n);
+        $("#output").text(solve(n));
+      });*/
+      $("#number").keyup(function () {
+        let n = parseInt($(this).val());
         if (isNaN(n)) {
           $("#output").text("enter valid number");
           return;

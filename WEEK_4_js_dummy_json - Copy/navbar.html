@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-3 mt-4 ms-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold fs-4 display-5``" href="dashboard.html">Cook Book</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      
+      id="toggleBtn"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto align-items-lg-center gap-1 mt-2 mt-lg-0">
+        <li class="nav-item">
+          <button id="homeBtn" class="btn btn-outline-light rounded-pill px-3">
+            Home
+          </button>
+        </li>
+      </ul>
+
+      <div class="d-flex flex-column flex-lg-row gap-3 position-relative mt-2 mt-lg-0">
+        <input
+          id="searchInput"
+          class="form-control rounded-pill px-3"
+          placeholder="Search recipes..."
+        />
+
+        <button id="searchBtn" class="btn btn-primary rounded-pill px-3">Search</button>
+        <button id="cartBtn" class="btn btn-outline-warning rounded-pill px-3">Cart</button>
+        <button id="logoutBtn" class="btn btn-outline-danger rounded-pill px-3">Logout</button>
+
+        <div
+          id="suggestionsBox"
+          class="list-group position-absolute w-100"
+          style="z-index: 1000; top: 100%"
+        ></div>
+      </div>
+    </div>
+  </div>
+</nav>
