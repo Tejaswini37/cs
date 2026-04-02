@@ -1,0 +1,21 @@
+.search-wrapper {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+
+@media (min-width: 992px) {
+  .search-wrapper {
+    width: 400px;
+  }
+}
+
+/* Suggestions styling */
+#suggestionsBox {
+  background: white;
+  border-radius: 10px;
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
