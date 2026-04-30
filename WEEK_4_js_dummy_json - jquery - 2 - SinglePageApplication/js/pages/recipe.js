@@ -1,6 +1,4 @@
-
 pages.recipe = function (params) {
-
   // protect route
   if (!isLoggedIn()) {
     navigate("login");
@@ -10,9 +8,7 @@ pages.recipe = function (params) {
   const id = params?.id;
 
   if (!id) {
-    $("#recipeDetails").html(
-      "<p class='text-danger'>Invalid recipe</p>"
-    );
+    $("#recipeDetails").html("<p class='text-danger'>Invalid recipe</p>");
     return;
   }
 
@@ -20,9 +16,7 @@ pages.recipe = function (params) {
 };
 
 function getRecipeDetails(id) {
-  $("#recipeDetails").html(
-    "<p class='text-light text-center'>Loading...</p>"
-  );
+  $("#recipeDetails").html("<p class='text-light text-center'>Loading...</p>");
 
   $.ajax({
     url: `https://dummyjson.com/recipes/${id}`,
@@ -34,7 +28,7 @@ function getRecipeDetails(id) {
 
     error: function () {
       $("#recipeDetails").html(
-        "<p class='text-danger text-center'>Failed to load recipe</p>"
+        "<p class='text-danger text-center'>Failed to load recipe</p>",
       );
     },
   });
@@ -78,12 +72,16 @@ function displayRecipe(recipe) {
           <div class="mt-3">
             <h4>Ingredients</h4>
             <ul class="list-group">
-              ${recipe.ingredients.map(i => `
+              ${recipe.ingredients
+                .map(
+                  (i) => `
                 <li class="list-group-item"
                     style="background-color:rgba(206,196,181,0.75);">
                   ${i}
                 </li>
-              `).join("")}
+              `,
+                )
+                .join("")}
             </ul>
           </div>
 
@@ -91,12 +89,16 @@ function displayRecipe(recipe) {
           <div class="mt-4">
             <h4>Instructions</h4>
             <ol class="list-group list-group-numbered">
-              ${recipe.instructions.map(i => `
+              ${recipe.instructions
+                .map(
+                  (i) => `
                 <li class="list-group-item"
                     style="background-color:rgba(206,196,181,0.75);">
                   ${i}
                 </li>
-              `).join("")}
+              `,
+                )
+                .join("")}
             </ol>
           </div>
 
@@ -116,8 +118,8 @@ $(document).on("click", ".addcart-btn", function () {
   if (!cart.includes(id)) {
     cart.push(id);
     localStorage.setItem("cart", JSON.stringify(cart));
-    Swal.fire('Added to cart', '', 'success');
+    Swal.fire("Added to cart", "qwetqwertyuio", "success");
   } else {
-    Swal.fire('Already in cart', '', 'warning');
+    Swal.fire("Already in cart", "", "warning");
   }
 });

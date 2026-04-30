@@ -1,6 +1,4 @@
-
 pages.login = function () {
-
   // already logged in → go dashboard
   if (isLoggedIn()) {
     navigate("dashboard");
@@ -24,7 +22,6 @@ function handleLogin() {
 
   authenticate(username, password);
 }
-
 
 function validate(value, min, max, field) {
   const error = $(`#${field}Error`);
@@ -55,7 +52,7 @@ function authenticate(username, password) {
     success: function (data) {
       localStorage.setItem("token", data.accessToken);
       loadNavbar();
-      // SPA navigation (IMPORTANT)
+      // SPA navigation 
       navigate("dashboard");
     },
 

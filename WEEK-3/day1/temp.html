@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxe - About</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <style>
+    /* Only things Bootstrap can't do on its own */
+    body       { background-color: #0d0d1a; }
+    .purple    { color: #a855f7; }
+    .bg-purple { background-color: #a855f7; }
+    .bg-card   { background-color: #1a1a30; }
+    .bg-dark2  { background-color: #12122a; }
+    .team-img  { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #a855f7; }
+    .email-input { background-color: #1a1a30; border: 1px solid #333; color: #fff; border-radius: 8px; padding: 10px 14px; }
+  </style>
+</head>
+<body class="text-white">
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg border-bottom border-secondary" style="background-color:#0d0d1a;">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold fs-4" href="#">🛍 LUXE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto gap-3">
+          <li class="nav-item"><a class="nav-link text-secondary" href="#">Shop</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#">Categories</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#">New Arrivals</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#">Sale</a></li>
+          <li class="nav-item"><a class="nav-link purple" href="#">About</a></li>
+        </ul>
+        <div class="d-flex gap-3">
+          <i class="bi bi-search"></i>
+          <i class="bi bi-heart"></i>
+          <i class="bi bi-person"></i>
+          <i class="bi bi-bag"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="py-5 text-center">
+    <div class="container py-4">
+      <span class="bg-card purple px-3 py-1 rounded-pill small">Our Story</span>
+      <h1 class="fw-bold mt-3 mb-3">Fashion That Inspires Confidence</h1>
+      <p class="text-secondary mx-auto" style="max-width:500px;">
+        Founded in 2018, Luxe began with a simple mission: to create beautiful,
+        high-quality fashion that empowers people to express their unique style
+        without compromising on ethics or sustainability.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- STATS -->
+  <section class="bg-dark2 py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-6 col-md-3 mb-3">
+          <div class="purple fw-bold fs-2">50K+</div>
+          <div class="text-secondary small">Happy Customers</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="purple fw-bold fs-2">500+</div>
+          <div class="text-secondary small">Products</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="purple fw-bold fs-2">15+</div>
+          <div class="text-secondary small">Countries</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="purple fw-bold fs-2">4.9</div>
+          <div class="text-secondary small">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STORY -->
+  <section class="py-5">
+    <div class="container py-3">
+      <div class="row align-items-center g-5">
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-4">From Passion to Purpose</h2>
+          <p class="text-secondary">What started as a small collection of handcrafted accessories has grown into a global fashion destination, but our core values remain unchanged.</p>
+          <p class="text-secondary">Every piece in our collection is thoughtfully designed and carefully crafted. We work directly with artisans who share our commitment to fair wages and sustainable practices.</p>
+          <p class="text-secondary">Our journey has been shaped by our incredible community of customers who inspire us every day.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=700&q=80"
+               class="img-fluid rounded-3 w-100" style="max-height:400px; object-fit:cover;" alt="Store"/>
+          <div class="bg-card rounded-3 p-3 mt-3 d-inline-block">
+            <div class="purple fw-bold">Since 2018</div>
+            <div class="text-secondary small">Creating timeless pieces</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VALUES -->
+  <section class="bg-dark2 py-5">
+    <div class="container py-3 text-center">
+      <h2 class="fw-bold">Our Values</h2>
+      <p class="text-secondary mb-5">The principles that guide everything we do</p>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="bg-card rounded-3 p-4 h-100 text-start">
+            <i class="bi bi-heart purple fs-4 mb-3 d-block"></i>
+            <h6 class="fw-bold">Quality First</h6>
+            <p class="text-secondary small mb-0">We source only the finest materials and work with skilled artisans.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bg-card rounded-3 p-4 h-100 text-start">
+            <i class="bi bi-leaf purple fs-4 mb-3 d-block"></i>
+            <h6 class="fw-bold">Sustainability</h6>
+            <p class="text-secondary small mb-0">Committed to ethical sourcing and eco-friendly practices.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bg-card rounded-3 p-4 h-100 text-start">
+            <i class="bi bi-people purple fs-4 mb-3 d-block"></i>
+            <h6 class="fw-bold">Community</h6>
+            <p class="text-secondary small mb-0">Building meaningful connections and giving back to communities.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bg-card rounded-3 p-4 h-100 text-start">
+            <i class="bi bi-lightning purple fs-4 mb-3 d-block"></i>
+            <h6 class="fw-bold">Innovation</h6>
+            <p class="text-secondary small mb-0">Constantly evolving our designs to bring you the best in fashion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TEAM -->
+  <section class="py-5">
+    <div class="container py-3 text-center">
+      <h2 class="fw-bold">Meet Our Team</h2>
+      <p class="text-secondary mb-5">The passionate people behind Luxe</p>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <img class="team-img" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah"/>
+          <p class="fw-bold mt-3 mb-0">Sarah Chen</p>
+          <p class="purple small">Founder & CEO</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <img class="team-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus"/>
+          <p class="fw-bold mt-3 mb-0">Marcus Williams</p>
+          <p class="purple small">Creative Director</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <img class="team-img" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily"/>
+          <p class="fw-bold mt-3 mb-0">Emily Rodriguez</p>
+          <p class="purple small">Head of Design</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <img class="team-img" src="https://randomuser.me/api/portraits/men/75.jpg" alt="David"/>
+          <p class="fw-bold mt-3 mb-0">David Park</p>
+          <p class="purple small">Operations Lead</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- COMMUNITY -->
+  <section class="bg-dark2 py-5">
+    <div class="container py-3">
+      <div class="row align-items-center g-5">
+        <div class="col-md-5">
+          <h2 class="fw-bold">Join the Luxe Community</h2>
+          <p class="text-secondary">Be the first to know about new arrivals, exclusive offers, and style inspiration.</p>
+          <div class="d-flex gap-2 mt-4">
+            <input type="email" class="email-input flex-grow-1" placeholder="Enter your email"/>
+            <button class="btn bg-purple text-white px-4">Subscribe</button>
+          </div>
+          <p class="text-secondary small mt-2">By subscribing, you agree to our Privacy Policy.</p>
+        </div>
+        <div class="col-md-7">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="bg-card rounded-3 p-3">
+                <i class="bi bi-tag purple fs-5 mb-2 d-block"></i>
+                <h6 class="fw-bold mb-1">Exclusive Offers</h6>
+                <p class="text-secondary small mb-0">Member-only discounts and early access to sales</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="bg-card rounded-3 p-3">
+                <i class="bi bi-lightning purple fs-5 mb-2 d-block"></i>
+                <h6 class="fw-bold mb-1">New Arrivals First</h6>
+                <p class="text-secondary small mb-0">Be first to know about new collections</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="bg-card rounded-3 p-3">
+                <i class="bi bi-arrow-repeat purple fs-5 mb-2 d-block"></i>
+                <h6 class="fw-bold mb-1">Free Returns</h6>
+                <p class="text-secondary small mb-0">Extended 60-day returns for subscribers</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="bg-card rounded-3 p-3">
+                <i class="bi bi-heart purple fs-5 mb-2 d-block"></i>
+                <h6 class="fw-bold mb-1">Style Tips</h6>
+                <p class="text-secondary small mb-0">Curated looks and styling inspiration</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- NEWSLETTER BAR -->
+  <div class="border-top border-secondary py-4" style="background-color:#0d0d1a;">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-md-6">
+          <h6 class="fw-bold mb-1">Join Our Newsletter</h6>
+          <p class="text-secondary small mb-0">Get 15% off your first order and stay updated on new arrivals.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex gap-2">
+            <input type="email" class="email-input flex-grow-1" placeholder="Enter your email"/>
+            <button class="btn bg-purple text-white">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="border-top border-secondary pt-5 pb-3" style="background-color:#0d0d1a;">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="fw-bold fs-5 mb-2">🛍 LUXE</div>
+          <p class="text-secondary small">Discover curated collections of premium fashion, accessories, and lifestyle products.</p>
+          <div class="d-flex gap-3 mt-2">
+            <i class="bi bi-instagram text-secondary"></i>
+            <i class="bi bi-facebook text-secondary"></i>
+            <i class="bi bi-pinterest text-secondary"></i>
+            <i class="bi bi-tiktok text-secondary"></i>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6 class="fw-bold mb-3">Shop</h6>
+          <div class="d-flex flex-column gap-2">
+            <a href="#" class="text-secondary text-decoration-none small">Clothing</a>
+            <a href="#" class="text-secondary text-decoration-none small">Accessories</a>
+            <a href="#" class="text-secondary text-decoration-none small">Footwear</a>
+            <a href="#" class="text-secondary text-decoration-none small">Bags</a>
+            <a href="#" class="text-secondary text-decoration-none small">Jewelry</a>
+            <a href="#" class="purple text-decoration-none small">Sale</a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6 class="fw-bold mb-3">Help</h6>
+          <div class="d-flex flex-column gap-2">
+            <a href="#" class="text-secondary text-decoration-none small">FAQ</a>
+            <a href="#" class="text-secondary text-decoration-none small">Shipping & Returns</a>
+            <a href="#" class="text-secondary text-decoration-none small">Size Guide</a>
+            <a href="#" class="text-secondary text-decoration-none small">Contact Us</a>
+            <a href="#" class="text-secondary text-decoration-none small">Track Order</a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6 class="fw-bold mb-3">About</h6>
+          <div class="d-flex flex-column gap-2">
+            <a href="#" class="text-secondary text-decoration-none small">Our Story</a>
+            <a href="#" class="text-secondary text-decoration-none small">Sustainability</a>
+            <a href="#" class="text-secondary text-decoration-none small">Careers</a>
+            <a href="#" class="text-secondary text-decoration-none small">Press</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-top border-secondary mt-4 pt-3 d-flex justify-content-between flex-wrap gap-2">
+        <span class="text-secondary small">© 2026 Luxe. All rights reserved.</span>
+        <div class="d-flex gap-3 align-items-center">
+          <a href="#" class="text-secondary text-decoration-none small">Privacy</a>
+          <a href="#" class="text-secondary text-decoration-none small">Terms</a>
+          <span class="border border-secondary rounded px-2 small text-secondary">VISA</span>
+          <span class="border border-secondary rounded px-2 small text-secondary">MC</span>
+          <span class="border border-secondary rounded px-2 small text-secondary">AMEX</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

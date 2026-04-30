@@ -1,6 +1,4 @@
-
 pages.cart = function () {
-
   // protect route
   if (!isLoggedIn()) {
     navigate("login");
@@ -15,7 +13,7 @@ function loadCart() {
 
   if (cart.length === 0) {
     $("#cartItems").html(
-      "<h5 class='text-center text-light'>Cart is empty</h5>"
+      "<h5 class='text-center text-light'>Cart is empty</h5>",
     );
     return;
   }
@@ -68,12 +66,10 @@ function loadCart() {
       console.log("Error loading cart", err);
 
       $("#cartItems").html(
-        "<p class='text-danger text-center'>Failed to load cart</p>"
+        "<p class='text-danger text-center'>Failed to load cart</p>",
       );
     });
 }
-
-
 
 // open recipe
 $(document).on("click", ".recipe-card", function () {

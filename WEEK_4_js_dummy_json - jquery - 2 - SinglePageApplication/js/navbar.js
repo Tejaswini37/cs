@@ -1,11 +1,10 @@
 function initNavbar() {
-
   $("#toggleBtn").on("click", function () {
     $("#navbarContent").toggleClass("show");
   });
 
-
   $("#brandBtn, #homeBtn").on("click", function (e) {
+    // <a href="#">Home</a> generally this reloads(defualt behaviour) , breaks SPA , ->so prevent
     e.preventDefault();
     navigate("dashboard");
   });
@@ -31,7 +30,7 @@ function initNavbar() {
   $("#searchInput").on(
     "input",
     debounce(function () {
-      const query = $(this).val().trim();
+      const query = $(this).val();
 
       if (!query) {
         $("#suggestionsBox").html("");
@@ -39,9 +38,10 @@ function initNavbar() {
       }
 
       fetchSuggestions(query);
-    }, 300)
+    }, 300),
   );
 
+  // outside click
   $(document).on("click", function (e) {
     if (
       !$(e.target).closest("#searchInput").length &&
@@ -54,7 +54,7 @@ function initNavbar() {
 }
 
 function searchRecipes() {
-  const query = $("#searchInput").val().trim();
+  const query = $("#searchInput").val();
 
   if (!query) return alert("Enter something");
 
@@ -62,7 +62,6 @@ function searchRecipes() {
 
   navigate("dashboard", { search: query });
 }
-
 
 function fetchSuggestions(query) {
   $.ajax({
@@ -79,12 +78,9 @@ function fetchSuggestions(query) {
   });
 }
 
-
 function showSuggestions(recipes) {
   if (!recipes.length) {
-    $("#suggestionsBox").html(
-      "<div class='list-group-item'>No results</div>"
-    );
+    $("#suggestionsBox").html("<div class='list-group-item'>No results</div>");
     return;
   }
 
@@ -101,13 +97,12 @@ function showSuggestions(recipes) {
           <span>${r.name}</span>
 
         </div>
-      `
+      `,
     )
     .join("");
 
   $("#suggestionsBox").html(html);
 }
-
 
 $(document).on("click", ".suggestion-item", function () {
   const id = $(this).data("id");
@@ -116,7 +111,6 @@ $(document).on("click", ".suggestion-item", function () {
 
   navigate("recipe", { id });
 });
-
 
 function debounce(func, delay) {
   let timer;

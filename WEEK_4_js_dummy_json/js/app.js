@@ -54,7 +54,38 @@ async function authenticate(username, password) {
   }
 }
 
-function redirectIfLoggedIn(){
-  const token=localStorage.getItem("token");
-  if(token) location.replace("dashboard.html");
+function redirectIfLoggedIn() {
+  const token = localStorage.getItem("token");
+  if (token) location.replace("dashboard.html");
 }
+
+// if (password.length < 6) {
+//       $("#passwordError").text("Password must be at least 6 characters");
+//       isValid = false;
+//     } else {
+//       let hasUpper = false;
+//       let hasDigit = false;
+
+//       for (let char of password) {
+//         if (char >= "A" && char <= "Z") {
+//           hasUpper = true;
+//         } else if (char >= "0" && char <= "9") {
+//           hasDigit = true;
+//         }
+//       }
+
+//       if (!hasUpper && !hasDigit) {
+//         $("#passwordError").text(
+//           "Password must include at least 1 uppercase letter and 1 number",
+//         );
+//         isValid = false;
+//       } else if (!hasUpper) {
+//         $("#passwordError").text(
+//           "Password must include at least 1 uppercase letter",
+//         );
+//         isValid = false;
+//       } else if (!hasDigit) {
+//         $("#passwordError").text("Password must include at least 1 number");
+//         isValid = false;
+//       }
+//     }

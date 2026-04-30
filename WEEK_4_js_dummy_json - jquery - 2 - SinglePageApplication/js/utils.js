@@ -1,4 +1,3 @@
-
 function isLoggedIn() {
   return !!localStorage.getItem("token");
 }
@@ -39,7 +38,6 @@ function removeFromCart(id) {
   cart = cart.filter((item) => item !== id);
   setCart(cart);
 }
-
 
 // safe param getter
 function getParam(params, key, defaultValue = "") {

@@ -1,9 +1,8 @@
-pages.dashboard  = function (params) {
-
+pages.dashboard = function (params) {
   let currentPage = 1;
   let limit = 8;
   let total = 0;
-  let currentSearch = params?.search || "";
+  let currentSearch = params?.search || "";  //params && params.search;
 
   if (!isLoggedIn()) {
     navigate("login");
@@ -22,9 +21,9 @@ pages.dashboard  = function (params) {
       headers: { Authorization: `Bearer ${token}` },
       success: function (data) {
         $("#welcomeText").html(
-          `<h2 class="text-light">Welcome ${data.firstName}</h2>`
+          `<h2 class="text-light">Welcome ${data.firstName}</h2>`,
         );
-      }
+      },
     });
   }
 
@@ -42,7 +41,6 @@ pages.dashboard  = function (params) {
     });
   }
 
-  
   function displayRecipes(recipes) {
     if (!recipes.length) {
       $("#recipes").html("<h5 class='text-light'>No recipes found</h5>");
@@ -73,7 +71,6 @@ pages.dashboard  = function (params) {
     $("#recipes").html(html);
   }
 
-
   function renderPagination() {
     const totalPages = Math.ceil(total / limit);
 
@@ -90,7 +87,6 @@ pages.dashboard  = function (params) {
 
     $("#pagination").html(html);
   }
-
 
   $(document)
     .off("click", ".recipe-card")
